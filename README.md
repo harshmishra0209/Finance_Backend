@@ -1,51 +1,49 @@
-# Finance Data Processing and Access Control Backend
+# Finance Backend System
 
-## 📌 Overview
-This project is a backend system designed for managing financial records with role-based access control. It provides APIs for handling users, financial transactions, and dashboard analytics.
-
-The system demonstrates clean backend architecture, proper data modeling, and structured API design.
-
----
+A robust and secure Financial Management Backend built using **Spring Boot**. This system handles user authentication, financial transactions, and account management with industry-standard security practices.
 
 ## 🚀 Features
+* **User Authentication:** Secure Login and Registration using **JWT (JSON Web Tokens)**.
+* **Security:** Role-based access control with **Spring Security**.
+* **Financial Operations:** Manage transactions, balances, and account details.
+* **RESTful Architecture:** Clean and scalable API endpoints.
+* **Database Management:** Integrated with **MySQL** using Spring Data JPA.
 
-### 👤 User Management
-- Create and manage users
-- Assign roles (ADMIN, ANALYST, VIEWER)
-- Manage user status (active/inactive)
+## 🛠️ Tech Stack
+* **Java** (JDK 17 or higher)
+* **Spring Boot** (Web, Security, Data JPA)
+* **JSON Web Token (JWT)** for secure Auth
+* **MySQL** Database
+* **Maven** for Dependency Management
 
-### 💰 Financial Records
-- Create, view, and delete financial records
-- Filter records by:
-  - Type (INCOME / EXPENSE)
-  - Category
+## 📂 Project Structure
+```text
+src/main/java/com/finance
+├── config          # Security and JWT configurations
+├── controller      # REST API Endpoints
+├── dto             # Data Transfer Objects
+├── entity          # Database Models
+├── repository      # JPA Repositories
+├── service         # Business Logic
+└── security        # Custom Auth Filters & Detail Services
 
-### 📊 Dashboard Analytics
-- Total Income
-- Total Expense
-- Net Balance
-- Category-wise totals
-- Recent activity (latest records)
+ Setup & Installation:
+git clone [https://github.com/harshmishra0209/Finance_Backend.git](https://github.com/harshmishra0209/Finance_Backend.git)
 
-### 🔐 Access Control
-- Role-based access implemented:
-  - ADMIN → Full access
-  - ANALYST → Read + analytics
-  - VIEWER → Read only
 
----
+Database Configuration:
+spring.datasource.url=jdbc:mysql://localhost:3306/finance_db
+spring.datasource.username=your_username
+spring.datasource.password=your_password
 
-## 🛠 Tech Stack
 
-- Java
-- Spring Boot
-- Spring Data JPA
-- MySQL
+Run the application:
+mvn spring-boot:run
 
----
 
-## ⚙️ How to Run
+Key API Endpoints:
+POST /api/auth/signup - Register a new user
+POST /api/auth/login - Authenticate user & get JWT token
+GET /api/accounts/balance - (Protected) Check account balance
+POST /api/transactions - (Protected) Make a new transaction
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/finance-dashboard-backend.git
