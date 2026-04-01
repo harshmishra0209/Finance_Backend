@@ -16,8 +16,8 @@ A robust and secure Financial Management Backend built using **Spring Boot**. Th
 * **MySQL** Database
 * **Maven** for Dependency Management
 
-## 📂 Project Structure
-```text
+📂 Project Structure
+text
 src/main/java/com/finance
 ├── config          # Security and JWT configurations
 ├── controller      # REST API Endpoints
